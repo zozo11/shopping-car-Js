@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- FontAwsone CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Goolge font CDN -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+    <title>Shopping cart</title>
+</head>
+<body>
+    {{>header}}
+    <section class="container mt-3">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img class="homeBgImg" value="{{img}}" src="{{img}}" alt="classic-tee"/>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 productWrapper">
+                <p class="productName" value="{{title}}">{{title}}</p>
+                <p class="productPrice"value="{{price}}" >$&nbsp;{{price}}</p>
+                <p class="productContent">
+                    {{info}}
+                </p>
+               
+                <p class="productContentSize">
+                    <span>SIZE</span>
+                     <span class="sizeRequire">*</span>
+                    
+                </p>
+                <div id="productSizeContent">
+                    <a href="#" class="productSize" value="{{sizes}}" data-id="{{id1}}" onclick="selectSize(this,'s', '{{id1}}')">
+                        {{sizes}}
+                    </a>
+                    <a href="#" class="productSize" value="{{sizem}}" data-id="{{id2}}" onclick="selectSize(this, 'm', '{{id2}}')">
+                        {{sizem}}
+                    </a>
+                    <a href="#" class="productSize" value="{{sizel}}" data-id="{{id3}}" onclick="selectSize(this, 'l', '{{id3}}')">
+                        {{sizel}}
+                    </a>
+                </div>
+                <button class="btnAddItem" id="addtocart" onclick="submitProduct('{{title}}', '{{img}}', '{{price}}')"> ADD TO CART</button>
+                <div class="datalert"></div>
+            </div>
+        </div>  
+    </section>
+    <script src="js/main.js"></script>
+</body>
+</html>
